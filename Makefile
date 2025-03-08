@@ -24,6 +24,7 @@ RM = rm -rf
 all :$(NAME)
 
 $(NAME) : $(OBJ)
+	@(echo "		█   ███ ██  █ █ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		█    █  ██  ███ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		███ ███ ██  █ █ ██  " )| lolcat
 	@$(AR) $(NAME) $(OBJ)
 
 %.o : %.c
