@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   hb_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*hb_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
@@ -21,17 +21,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	sl1 = ft_strlen(s1);
+	sl1 = hb_strlen(s1);
 	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (s1[start] && hb_strchr(set, s1[start]))
 		start++;
 	end = sl1;
-	while (end > start && ft_strchr(set, s1[end - 1]))
+	while (end > start && hb_strchr(set, s1[end - 1]))
 		end--;
 	res = (char *)malloc(end - start + 1);
 	if (!res)
 		return (NULL);
-	ft_strlcpy(res, s1 + start, end - start + 1);
+	hb_strlcpy(res, s1 + start, end - start + 1);
 	res[end - start] = '\0';
 	return (res);
 }

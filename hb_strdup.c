@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   hb_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "libhb.h"
 
-char	*ft_strdup(const char *s)
+char	*hb_strdup(const char *s)
 {
 	int		i;
 	char	*ptr;
 
-	ptr = malloc(ft_strlen(s) + 1);
+	ptr = malloc(hb_strlen(s) + 1);
 	if (!ptr)
 		return (NULL);
 	i = 0;

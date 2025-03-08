@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   hb_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*hb_memmove(void *dest, const void *src, size_t len)
 {
 	unsigned char	*d;
 	unsigned char	*s;
@@ -39,7 +39,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	void	*beff;
 
 	beff = NULL;
-	ft_memcpy(beff, src, len);
-	ft_memcpy(dest, beff, len);
+	hhbmemcpy(beff, src, len);
+	hb_memcpy(dest, beff, len);
 	return (dest);
 }*/

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   hb_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,13 @@
 
 #include "libhb.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*hb_strchr(const char *str, int c)
 {
 	char	*s;
 
 	s = (char *)str;
 	if ((char)c == '\0')
-		return (s + ft_strlen(s));
+		return (s + hb_strlen(s));
 	while (*s)
 	{
 		if (*s == (char)c)

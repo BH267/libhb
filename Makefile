@@ -7,10 +7,10 @@ SRC = hb_isprint.c    hb_putnbr_fd.c  hb_strlen.c hb_atoi.c \
 	  hb_memset.c     hb_strjoin.c    hb_tolower.c hb_isascii.c \
 	  hb_putchar_fd.c hb_strlcat.c    hb_toupper.c hb_isdigit.c \
 	  hb_putendl_fd.c hb_strlcpy.c hb_memcmp.c hb_striteri.c \
-	  hb_strmapi.c hb_strtrim.c hb_lstadd_back.c \
-	  hb_lstadd_front.c hb_lstclear.c \
-	  hb_lstdelone.c hb_lstiter.c hb_lstlast.c \
-	  hb_lstmap.c hb_lstnew.c hb_lstsize.c
+	  hb_strmapi.c hb_strtrim.c hb_lstadd_back.c hb_lstadd_front.c \
+	  hb_lstclear.c hb_lstdelone.c hb_lstiter.c hb_lstlast.c \
+	  hb_lstmap.c hb_lstnew.c hb_lstsize.c hb_mtrfree.c hb_mtrcpy.c \
+	  hb_mtrlen.c hb_putmtr.c hb_printf.c hb_putuh.c
 
 NAME = libhb.a
 OBJ = $(SRC:.c=.o)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   hb_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "libhb.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	hb_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
 	if (*lst)
-		ft_lstlast(*lst)->next = new;
+		hb_lstlast(*lst)->next = new;
 	else
 		*lst = new;
 }

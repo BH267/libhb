@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   hb_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,14 +12,14 @@
 
 #include "libhb.h"
 
-int	ft_atoi(const char *nbr)
+int	hb_atoi(const char *nbr)
 {
 	int	n;
 	int	s;
 
 	s = 1;
 	n = 0;
-	while (!ft_isdigit(*nbr) && *nbr != '-' && *nbr != '+')
+	while (!hb_isdigit(*nbr) && *nbr != '-' && *nbr != '+')
 	{
 		if ((9 <= *nbr && *nbr <= 13) || *nbr == 32)
 			nbr++;
@@ -32,7 +32,7 @@ int	ft_atoi(const char *nbr)
 			s = -1;
 		nbr++;
 	}
-	while (ft_isdigit(*nbr))
+	while (hb_isdigit(*nbr))
 	{
 		n = n * 10 + (*nbr - '0');
 		nbr++;

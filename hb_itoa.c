@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   hb_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-static int	ft_lenum(int n, int nega)
+static int	hb_lenum(int n, int nega)
 {
 	int	l;
 
@@ -29,14 +29,14 @@ static int	ft_lenum(int n, int nega)
 	return (l);
 }
 
-static int	ft_nega(int n, char *num)
+static int	hb_nega(int n, char *num)
 {
 	*num = '-';
 	n *= -1;
 	return (n);
 }
 
-char	*ft_itoa(int n)
+char	*hb_itoa(int n)
 {
 	char	*num;
 	int		nega;
@@ -44,14 +44,14 @@ char	*ft_itoa(int n)
 
 	num = NULL;
 	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+		return (hb_strdup("-2147483648"));
 	nega = (n < 0);
-	lenum = ft_lenum (n, nega);
+	lenum = hb_lenum (n, nega);
 	num = malloc(lenum + 1);
 	if (!num)
 		return (NULL);
 	if (nega)
-		n = ft_nega(n, num);
+		n = hb_nega(n, num);
 	num[lenum--] = '\0';
 	while (0 <= lenum)
 	{

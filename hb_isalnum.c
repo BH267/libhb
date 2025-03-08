@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   hb_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-int	ft_isalnum(int c)
+int	hb_isalnum(int c)
 {
-	return (ft_isalpha(c) != 0 || ft_isdigit(c) != 0);
+	return (hb_isalpha(c) != 0 || hb_isdigit(c) != 0);
 }

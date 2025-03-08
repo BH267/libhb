@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   hb_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-void	*ft_calloc(size_t len, size_t b)
+void	*hb_calloc(size_t len, size_t b)
 {
 	void	*p;
 
@@ -21,6 +21,6 @@ void	*ft_calloc(size_t len, size_t b)
 	p = malloc(len * b);
 	if (!p)
 		return (NULL);
-	ft_bzero(p, len * b);
+	hb_bzero(p, len * b);
 	return (p);
 }

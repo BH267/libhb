@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   hb_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	hb_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*n;
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while ((*lst) != NULL)
 	{
 		n = (*lst)->next;
-		ft_lstdelone(*lst, del);
+		hb_lstdelone(*lst, del);
 		*lst = n;
 	}
 	lst = NULL;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   hb_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-static int	ft_count_word(const char *s, char c)
+static int	hb_count_word(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ static int	ft_count_word(const char *s, char c)
 	return (count);
 }
 
-static int	ft_free(char **s, size_t i)
+static int	hb_free(char **s, size_t i)
 {
 	size_t	index;
 
@@ -47,7 +47,7 @@ static int	ft_free(char **s, size_t i)
 	return (0);
 }
 
-static int	ft_write(char **s, const char *d, char c)
+static int	hb_write(char **s, const char *d, char c)
 {
 	size_t	wcont;
 	size_t	start;
@@ -65,26 +65,26 @@ static int	ft_write(char **s, const char *d, char c)
 		start = wcont;
 		while (d[wcont] && d[wcont] != c)
 			wcont++;
-		s[index] = ft_substr(d, start, wcont - start);
+		s[index] = hb_substr(d, start, wcont - start);
 		if (!s[index++])
-			return (ft_free(s, index));
+			return (hb_free(s, index));
 	}
 	s[index] = NULL;
 	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+char	**hb_split(char const *s, char c)
 {
 	int		count;
 	char	**arr;
 
 	if (!s)
 		return (NULL);
-	count = ft_count_word(s, c);
+	count = hb_count_word(s, c);
 	arr = (char **)malloc((count + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	if (ft_write(arr, s, c) == 0)
+	if (hb_write(arr, s, c) == 0)
 		return (NULL);
 	return (arr);
 }
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 // 	char	*string = "      split       this for   me  !       ";
 // 	char	**expected = ((char*[6]){"split", "this", "for", "me", "!", NULL});
 
-// 	char	**result = ft_split(string, ' ');
+// 	char	**result = hb_split(string, ' ');
 
 // 	 while (*result)
 // 	{

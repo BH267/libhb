@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   hb_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	hb_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{
@@ -22,14 +22,37 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		n *= -1;
-		ft_putchar_fd('-', fd);
+		hb_putchar_fd('-', fd);
 	}
 	if (n < 10)
-		ft_putchar_fd('0' + n, fd);
+		hb_putchar_fd('0' + n, fd);
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		hb_putnbr_fd(n / 10, fd);
+		hb_putnbr_fd(n % 10, fd);
 	}
 	return ;
 }
+
+void	hb_putnbr(int n)
+{
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		n *= -1;
+		hb_putchar('-');
+	}
+	if (n < 10)
+		hb_putchar('0' + n);
+	else
+	{
+		hb_putnbr(n / 10);
+		hb_putnbr(n % 10);
+	}
+	return ;
+}
+

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   hb_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,24 @@
 
 #include "libhb.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	hb_putstr_fd(char *s, int fd)
 {
 	if (!s)
+	{
+		write(1, "(null)", 6);
 		return ;
+	}
 	while (*s)
 		write(fd, s++, 1);
+}
+
+void	hb_putstr(char *s)
+{
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return ;
+	}
+	while (*s)
+		write(1, s++, 1);
 }

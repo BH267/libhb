@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   hb_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,18 @@
 
 #include "libhb.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	hb_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	hb_putstr_fd(s, fd);
+	hb_putchar_fd('\n', fd);
+}
+
+void	hb_putendl(char *s)
+{
+	if (!s)
+		return ;
+	hb_putstr(s);
+	hb_putchar('\n');
 }

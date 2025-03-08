@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   hb_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libhb.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*hb_strnstr(char *str, char *to_find, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -21,15 +21,15 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		return (str);
 	if (!len)
 		return (NULL);
-	if (len > ft_strlen(str))
-		len = ft_strlen(str);
+	if (len > hb_strlen(str))
+		len = hb_strlen(str);
 	i = 0;
 	while (str[i] && i <= len)
 	{
 		j = 0;
 		while (str[i + j] == to_find[j] && i + j < len)
 		{
-			if (j == ft_strlen(to_find) - 1)
+			if (j == hb_strlen(to_find) - 1)
 				return (str + i);
 			j++;
 		}
