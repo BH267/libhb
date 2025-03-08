@@ -18,24 +18,24 @@ int	hb_format(char sp, va_list list)
 
 	cont = 0;
 	if (sp == 's')
-		cont = hb_putstr(va_arg(list, char *));
+		cont = hb_cputstr(va_arg(list, char *));
 	else if (sp == 'd' || sp == 'i')
-		cont = hb_putnbr(va_arg(list, int));
+		cont = hb_cputnbr(va_arg(list, int));
 	else if (sp == 'c')
-		cont = hb_putchar(va_arg(list, int));
+		cont = hb_cputchar(va_arg(list, int));
 	else if (sp == '%')
-		cont = hb_putchar('%');
+		cont = hb_cputchar('%');
 	else if (sp == 'x' || sp == 'X')
-		cont = hb_puthexa(va_arg(list, unsigned int), sp);
+		cont = hb_cputhexa(va_arg(list, unsigned int), sp);
 	else if (sp == 'p')
 	{
-		cont = hb_putstr("0x");
-		cont += hb_puthexa((va_arg(list, unsigned long)), 'x');
+		cont = hb_cputstr("0x");
+		cont += hb_cputhexa((va_arg(list, unsigned long)), 'x');
 	}
 	else if (sp == 'u')
-		cont = hb_putunbr(va_arg(list, unsigned int));
+		cont = hb_cputunbr(va_arg(list, unsigned int));
 	else
-		cont += hb_putchar(sp);
+		cont += hb_cputchar(sp);
 	return (cont);
 }
 
@@ -59,7 +59,7 @@ int	hb_printf(const char *f, ...)
 			cont += hb_format(*(++sp), list);
 		}
 		else
-			cont += hb_putchar(*sp);
+			cont += hb_cputchar(*sp);
 		sp++;
 	}
 	va_end(list);
@@ -68,7 +68,7 @@ int	hb_printf(const char *f, ...)
 /*
 int main ()
 {
-	int l = hb_printf("%\n");
+	int l = hb_cprintf("%\n");
 	int len2 = printf("%\n");
 	printf("%i,  %i", l, len2);
 }*/

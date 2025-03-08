@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hb_putuh.c                                         :+:      :+:    :+:   */
+/*   hb_cputstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 19:36:25 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/15 17:12:04 by habenydi         ###   ########.fr       */
+/*   Created: 2024/10/24 19:32:43 by habenydi          #+#    #+#             */
+/*   Updated: 2024/11/15 09:57:37 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libhb.h"
 
-void	hb_puthexa(unsigned long n, char x)
+int	hb_cputstr(char *s)
 {
-	char	*lwbase;
-	char	*upbase;
+	int	i;
 
-	lwbase = "0123456789abcdef";
-	upbase = "0123456789ABCDEF";
-	if (n < 16)
+	i = 0;
+	if (s == NULL)
 	{
-		if (x == 'x')
-			hb_putchar(*(n + lwbase));
-		if (x == 'X')
-			hb_putchar(*(n + upbase));
+		write(1, "(null)", 6);
+		return (6);
 	}
-	if (n >= 16)
-	{
-		hb_puthexa(n / 16, x);
-		hb_puthexa(n % 16, x);
-	}
-}
-
-void	hb_putunbr(unsigned int n)
-{
-	if (n < 10)
-		hb_putchar('0' + n);
-	else
-	{
-		hb_putunbr(n / 10);
-		hb_putunbr(n % 10);
-	}
+	while (s[i])
+		write(1, s + (i++), 1);
+	return (i);
 }

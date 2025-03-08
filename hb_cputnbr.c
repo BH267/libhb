@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hb_putuh.c                                         :+:      :+:    :+:   */
+/*   hb_cputnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habenydi <habenydi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:36:25 by habenydi          #+#    #+#             */
-/*   Updated: 2024/11/15 17:12:04 by habenydi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:01:29 by habenydi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libhb.h"
 
-void	hb_puthexa(unsigned long n, char x)
+int	hb_cputnbr(int n)
 {
-	char	*lwbase;
-	char	*upbase;
+	int	cont;
 
-	lwbase = "0123456789abcdef";
-	upbase = "0123456789ABCDEF";
-	if (n < 16)
+	cont = 0;
+	if (n == -2147483648)
 	{
-		if (x == 'x')
-			hb_putchar(*(n + lwbase));
-		if (x == 'X')
-			hb_putchar(*(n + upbase));
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	if (n >= 16)
+	if (n < 0)
 	{
-		hb_puthexa(n / 16, x);
-		hb_puthexa(n % 16, x);
+		n *= -1;
+		cont += hb_cputchar('-');
 	}
-}
-
-void	hb_putunbr(unsigned int n)
-{
 	if (n < 10)
-		hb_putchar('0' + n);
+		cont += hb_cputchar('0' + n);
 	else
 	{
-		hb_putunbr(n / 10);
-		hb_putunbr(n % 10);
+		cont += hb_cputnbr(n / 10);
+		cont += hb_cputnbr(n % 10);
 	}
+	return (cont);
 }
