@@ -48,6 +48,7 @@ char	*hb_itoa(int n);
 char	*hb_strdup(const char *s);
 char	*hb_strchr(const char *str, int c);
 char	*hb_strrchr(const char *str, int c);
+char	*hb_strstr(char *str, char *to_find);
 char	**hb_split(char const *s, char c);
 char	**hb_mtrcpy(char **mtr);
 char	*hb_strjoin(char const *s1, char const *s2);
