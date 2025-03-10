@@ -17,9 +17,12 @@ char	*hb_mtrchr(char **mtr, char *str)
 	int	i;
 	char	*to_find;
 
+	i = 0;
 	while (mtr && mtr[i])
 	{
 		to_find = hb_strstr(mtr[i], str);
+		if (to_find)
+			break;
 		i++;
 	}
 	return (to_find);

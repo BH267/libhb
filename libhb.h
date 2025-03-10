@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBHB_H
+# define LIBHB_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -47,7 +47,9 @@ int		hb_memcmp(const void *s1, const void *s2, size_t n);
 char	*hb_itoa(int n);
 char	*hb_strdup(const char *s);
 char	*hb_strchr(const char *str, int c);
+char	*hb_mtrchr(char **mtr, char *str);
 char	*hb_strrchr(const char *str, int c);
+char	*hb_mtrrchr(char **mtr, char *str);
 char	*hb_strstr(char *str, char *to_find);
 char	**hb_split(char const *s, char c);
 char	**hb_mtrcpy(char **mtr);
