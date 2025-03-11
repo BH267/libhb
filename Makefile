@@ -1,6 +1,6 @@
 
 SRC = hb_isprint.c    hb_putnbr_fd.c  hb_strlen.c hb_atoi.c \
-	  hb_itoa.c       hb_putstr_fd.c  hb_strncmp.c hb_bzero.c \
+	  hb_itoa.c	  hb_putstr_fd.c  hb_strncmp.c hb_bzero.c \
 	  hb_memchr.c     hb_split.c      hb_strnstr.c hb_calloc.c \
 	  hb_memcpy.c     hb_strchr.c     hb_strrchr.c hb_isalnum.c \
 	  hb_memmove.c    hb_strdup.c     hb_substr.c hb_isalpha.c \
@@ -12,7 +12,8 @@ SRC = hb_isprint.c    hb_putnbr_fd.c  hb_strlen.c hb_atoi.c \
 	  hb_lstmap.c hb_lstnew.c hb_lstsize.c hb_mtrfree.c hb_mtrcpy.c \
 	  hb_mtrlen.c hb_putmtr.c hb_printf.c hb_putuh.c hb_bubble_sort.c \
 	  hb_isorted.c hb_cputchar.c hb_cputnbr.c hb_cputuh.c hb_cputstr.c \
-	  hb_strstr.c hb_mtrchr.c hb_mtrrchr.c hb_mtrfchr.c hb_printf.c hb_strerror.c
+	  hb_strstr.c hb_mtrchr.c hb_mtrrchr.c hb_mtrfchr.c hb_printf.c \
+	  hb_strerror.c hb_realloc.c 
 
 NAME = libhb.a
 OBJ = $(SRC:.c=.o)
@@ -25,7 +26,7 @@ RM = rm -rf
 all :$(NAME)
 
 $(NAME) : $(OBJ)
-	@(echo "		█   ███ ██  █ █ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		█    █  ██  ███ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		███ ███ ██  █ █ ██  " )#| lolcat
+	@(echo "\n" && echo "		█   ███ ██  █ █ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		█    █  ██  ███ ██  " && echo "		█    █  █ █ █ █ █ █ " && echo "		███ ███ ██  █ █ ██  " && echo "\n")#| lolcat
 	@$(AR) $(NAME) $(OBJ)
 
 %.o : %.c
