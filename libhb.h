@@ -43,6 +43,7 @@ int		hb_cputhexa(unsigned long n, char x);
 int		hb_isorted(t_list *a);
 int		hb_atoi(const char *nbr);
 int		hb_lstsize(t_list *lst);
+int		hb_strcmp(const char *s1, const char *s2);
 int		hb_strncmp(char *s, char *p, size_t n);
 int		hb_memcmp(const void *s1, const void *s2, size_t n);
 char	*hb_itoa(int n);
